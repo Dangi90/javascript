@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>3.배열</h3>
+
+    <script>
+        const arr = [1,2,3,4,5];
+
+        document.write('arr[0]: ' +arr[0]+'<br>');
+        document.write('arr[3]: ' +arr[3]+'<br>');
+
+        for(let i=0 ; i<arr.length ; i++){
+            document.write('arr['+i+'] :' +arr[i] + '<br>');
+        }
+
+        // for~in : 배열 인덱스 참조 반복문
+        for(let i in arr){
+            document.write('arr['+i+'] :' +arr[i] + '<br>');
+        }
+
+        //for~of :배열 원소 참조 반복문
+        for(let e of arr){
+            document.write(e+'<br>');
+        }
+
+        //2차원 배열
+
+        //3차원 배열
+        const arr3d = [[[1,2,3] ,
+                        [4,5,6] , 
+                        [7,8,9]],
+                        [[10,11,12] , 
+                        [13,14,15] , 
+                        [16,17,18]],
+                        [[19,20,21] , 
+                        [22,23,24] , 
+                        [25,26,27]],]
+
+        document.write('arr3d(0,0,2): ' +arr3d[0,0,2]);
+ 
+
+    </script>
+</body>
+</html>
