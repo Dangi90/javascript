@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/Account.js"></script>
+    <title>1.객체</title>
+    <!--
+        날짜 : 24/08/06
+        이름 : 박준우
+        내용 : javaScript 객체 실습하기
+    -->
+</head>
+<body>
+    <h3>1.객체</h3>
+    <script>
+        const acc = new Account('우리','woo','박준우',10000);
+
+        acc.deposit(10000);
+        acc.withdraw(2000);
+        acc.show();
+        
+        const sonata = {
+            brand: '소나타',
+            color: '흰색',
+            speed: 0,
+
+            speedUP: function(speed){
+                this.speed += speed;
+            },
+            speedDown: function(speed){
+                this.speed -= speed;
+            },
+            show: function(){
+                document.write('<br>차량명: '+this.brand+'<br>');
+                document.write('차량색: '+this.color+'<br>');
+                document.write('속도: '+this.speed+'<br>');
+            }  
+        }
+
+        sonata.speedUP(50);
+        sonata.show();
+        sonata.speedDown(20);
+        sonata.show();
+
+
+    </script>
+
+</body>
+</html>

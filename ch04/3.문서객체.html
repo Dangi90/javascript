@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+        날짜 : 24/08/06
+        이름 : 박준우
+        내용 : javaScript 문서객체 실습하기
+    -->
+
+    <style>
+        .box{
+            display: inline-block;
+            width: 100px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h3>3.문서객체모델</h3>
+
+    <h4>문서객체 선택</h4>
+    <ul>
+        <li id="seoul">
+            <span>서울</span>
+            <ol>
+                <li><i>명동</i></li>
+                <li><i>종로</i></li>
+                <li><i>홍대</i></li>
+                <li><i>신촌</i></li>
+            </ol>
+        </li>
+        <li>대전</li>
+        <li id="daegu">대구</li>
+        <li>
+            <span>부산</span>
+            <ol>
+                <li class="busan">서면</li>
+                <li class="busan">남포동</li>
+                <li class="busan">해운대</li>
+            </ol>
+        </li>
+        <li class="gwangju">광주</li>
+    </ul>
+
+    <script>
+        //문서객체 선택
+        const h3 = document.querySelector('h3')
+        h3.style.color = "blue";
+
+        document.querySelector('#seoul>span');
+        seoul.style.color='red';
+
+        const daejeon = document.querySelector('ul > li:nth-child(2)'); //ul의 2번쨰 자식 : 대전
+        daejeon.style.color = 'green';
+
+        const busan = document.querySelectorAll('.busan');
+        busan[0].style.color = 'gray';
+        busan[1].style.color = 'yellow';
+        busan[2].style.color = 'pink';
+
+        const names = document.getElementsByTagName('i');
+        for(let name of names){
+            name.style.color = 'brown'
+        }
+
+        const gwangju = getElementsByClassName('gwangju')
+        gwangju[0].style.color = 'red';
+    </script>
+
+    <h4>문서객체 조작</h4>
+
+    <div type=box class= "box1" >box1</div>
+    <div type=box class= "box2" >box2</div>
+
+    <ul>
+        <li id="seoul">
+            <span>서울</span>
+            <ol>
+                <li><i>명동</i></li>
+                <li><i>종로</i></li>
+                <li><i>홍대</i></li>
+                <li><i>신촌</i></li>
+            </ol>
+        </li>
+        <li>대전</li>
+        <li id="daegu">대구</li>
+        <li>
+            <span>부산</span>
+            <ol>
+                <li class="busan">서면</li>
+                <li class="busan">남포동</li>
+                <li class="busan">해운대</li>
+            </ol>
+        </li>
+        <li class="gwangju">광주</li>
+    </ul>
+    
+    <script>
+        //문서객체 조작
+
+        //속성
+        const images = document.querySelectorAll('img');
+        images[0].src='https://picsum.photos/id/237/300/200';
+        images[0].alt = '웹이미지 강아지';
+
+        images[1].src='https://picsum.photos/id/238/300/200';
+        images[1].alt = '웹이미지 도시';
+
+        //스타일
+        
+
+
+    </script>
+    
+
+
+    <h4>문서객체 추가/이동</h4>
+        <ul class = "city">
+            <li>
+                <em>경기도</em>
+                <ol></ol>
+            </li>
+            <li>
+                <em>충청도</em>
+                <ol></ol>
+            </li>
+            <li>
+                <em>강원도</em>
+                <ol>
+                   
+                </ol>
+            </li>
+            <li>
+                <em>경상도</em>
+                <ol>
+                    <li>창원</li>
+                    <li>수원</li>
+                    <li>목포</li>
+                    <li>원주</li>
+                    <li>파주</li>
+                </ol>
+            </li>
+            <li>
+                <em>전라도</em>
+                <ol>
+                    
+                </ol>
+            </li>
+        </ul>
+
+        <script>
+            //문서객체 추가&이동
+
+            const gyunggi = document.querySelector('.city > li:nth-child(1)>ol');
+            const chungcheong = document.querySelector('.city > li:nth-child(2)>ol');
+            const gangwon = document.querySelector('.city > li:nth-child(3)>ol');
+            const gyeongsang = document.querySelector('.city > li:nth-child(4)>ol');
+            const jeonlla = document.querySelector('.city > li:nth-child(5)>ol');
+
+            gyunggi.insertAdjacentHTML('beforeend',<li>평택</li>)
+            gyunggi.insertAdjacentHTML('beforeend',<li>용인</li>)
+            gyunggi.insertAdjacentHTML('beforeend',<li>성남</li>)
+            gyunggi.insertAdjacentHTML('beforeend',<li>화성</li>)
+
+
+        </script>
+
+
+    <h4>문서객체 생성/삭제</h4>
+    <section>
+        <h5>삭제예정</h5>
+
+        <script>
+            //문서 객체 생성/삭제
+            const section = document.getElementsByTagName('section')[0];
+            const p = document.createElement('p');
+            p.id = 'tit';
+            p.innerText = '동적으로 생성한 문단태그 p';
+
+            section.appendChild(p);
+
+            document.getElementsByName('h5')[0].remove();
+
+        </script>
+
+    </section>
+
+</body>
+
+</html>

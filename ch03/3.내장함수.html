@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.내장함수</title>
+    <!--
+        날짜 : 24/08/06
+        이름 : 박준우
+        내용 : 자바스크립트 내장함수 실습하기
+    -->
+</head>
+
+<body>
+    <h3>3.내장함수</h3>
+
+    <script>
+        //숫자변환
+        let st1 = '10';
+        let st2 = '3.14';
+        let st3 = '2024년';
+
+        let r1 = parseInt(st1);
+        let r2 = parseInt(st2);
+        let r3 = parseInt(st3);
+
+        document.write('r1: ' + r1 + "<br>");
+        document.write('r2: ' + r2 + "<br>");
+        document.write('r3: ' + r3 + "<br>");
+
+        //문자열 변환
+        let num1 = 10;
+        let num2 = 20;
+
+        let rs1 = String(num1);
+        let rs2 = String(num2);
+
+        document.write('rs1+rs2: ' + rs1 + rs2 + '<br>');
+
+        // 타이머함수
+
+        // 대화상자
+        alert('기본 대화상자');
+
+        let result = confirm("확인, 취소 대화상자");
+
+        if (result) {
+            document.write('확인을 누르셨습니다.');
+        } else {
+            document.write('취소를 누르셨습니다.');
+        }
+
+        let value = prompt('입력 대화상자')
+        document.write('입력 데이터: ' + value + '<br>');
+
+
+
+
+    </script>
+</body>
+
+</html>
