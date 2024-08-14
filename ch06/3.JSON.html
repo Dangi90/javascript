@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3.JSON</title>
+    <!--
+        날짜 : 24/08/12
+        이름 : 박준우
+        내용 : 자바스크립트 JSON 실습하기
+    -->
+  </head>
+  <body>
+    <h3>3.JSON</h3>
+    <script>
+      //JSON 객체
+      const user = {
+        uid: "a101",
+        name: "김유신",
+        age: "23",
+        addr: "김해",
+      };
+
+      document.write("user: " + user + "<br>");
+      document.write("user.uid: " + user.uid + "<br>");
+      document.write("user.name: " + user.name + "<br>");
+      document.write("user.age: " + user.age + "<br>");
+      document.write("user.addr: " + user.addr + "<br>");
+
+      //JSON 배열
+      const jsonData = {
+        users: [
+          { uid: "a101", name: "김유신", age: "25", addr: "김해" },
+          { uid: "a102", name: "김춘추", age: "23", addr: "경주" },
+          { uid: "a103", name: "장보고", age: "33", addr: "완도" },
+          { uid: "a104", name: "김춘추", age: "23", addr: "서울" },
+          { uid: "a105", name: "김춘추", age: "44", addr: "부산" },
+        ],
+      };
+
+      for (const user of jsonData.users) {
+        document.write("<p>");
+        document.write("uid : " + user.uid + "<br>");
+        document.write("name : " + user.name + "<br>");
+        document.write("age : " + user.age + "<br>");
+        document.write("addr : " + user.addr + "<br>");
+        document.write("</p>");
+      }
+
+      //JSON함수
+      const member = {
+        id: "a101",
+        name: "홍길동",
+        age: "22",
+        hp: "010-1234-5678",
+      };
+
+      //stringify() - JSON을 문자열로 변환
+      const strMember = JSON.stringify(member);
+      document.write("strMember : " + strMember + "<br>");
+
+      //parsing() - 문자열을 JSON 객체 변환
+      const parseMember = JSON.parse(strMember);
+      document.write("parseMember : " + parseMember + "<br>");
+      document.write("parseMember.uid : " + parseMember.id + "<br>");
+      document.write("parseMember.name : " + parseMember.name + "<br>");
+      document.write("parseMember.age : " + parseMember.age + "<br>");
+      document.write("parseMember.hp : " + parseMember.hp + "<br>");
+    </script>
+  </body>
+</html>

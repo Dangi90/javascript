@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.promise</title>
+    <!--
+        날짜 : 24/08/12
+        이름 : 박준우
+        내용 : 자바스크립트 promise 실습
+    -->
+  </head>
+  <body>
+    <h3>2.promise</h3>
+    <script>
+      // promise 객체(제작코드)
+      const result = true;
+
+      const promise = new Promise((resolve, reject) => {
+        if (result) {
+          resolve("promise success...");
+        } else {
+          resolve("promise failed...");
+        }
+      });
+
+      //promise 객체 사용 (소비코드)
+      promise
+        .then((message) => {
+          console.log("then : " + message);
+        })
+        .catch((message) => {
+          console.log("then: " + message);
+        })
+        .finally(() => {
+          console.log("finally...");
+        });
+
+      // promise를 이용한 비동기 처리(실행시간이 다른 함수를 호출한 순서대로 처리하는 방식)
+      function step1() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("step1...");
+          }, 1000);
+        });
+      }
+
+      function step2(txt) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("step2...");
+          }, 3000);
+        });
+      }
+
+      function step3(txt) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("step3...");
+          }, 2000);
+        });
+      }
+
+      step1()
+        .then((txt) => step2(txt))
+        .then((txt) => step3(txt))
+        .then((txt) => console.log(txt));
+    </script>
+  </body>
+</html>
